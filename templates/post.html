@@ -1,0 +1,31 @@
+ <!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+<h3>{{ time_now|date:'d M Y' }}</h3>
+<!-- Название у нас будет Product -->
+{% block title %}
+Post
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим сам товар, идентификатор которого был передан в url -->
+{% block content %}
+<h1>
+<table> <!-- Начинаем описывать таблицу -->
+           <tr> <!-- Добавляем строку -->
+               <td> <!-- Добавляем ячейку в строку -->
+                   Название
+               </td>
+               <td> <!-- Добавляем ещё одну ячейку в строку и так далее -->
+                    Текст статьи
+               </td>
+               <td>
+                Дата публикации
+                  
+               </td>
+           </tr> <!-- Не забываем закрыть HTML-тег строки -->
+            <td>  {{ post.title|censor }}</td>
+               <td>  {{ post.text|truncatechars:20|censor }}</td>
+               <td>  {{ post.date|date:'d M Y' }}
+               </td>
+               </h1>
+{% endblock content %}
