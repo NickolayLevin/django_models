@@ -14,9 +14,14 @@ class Author(models.Model):
         self.rating = sum_of_posts + sum_of_comments + sum_of_posts_comments
         self.save()
 
+    def __str__(self):
+        return self.user.username
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
     class PostType(models.TextChoices):

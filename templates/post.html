@@ -22,10 +22,18 @@ Post
                 Дата публикации
                   
                </td>
+               </td>
+               <td>
+                Рейтинг
+                  
+               </td>
            </tr> 
             <td>  {{ post.title|censor }}</td>
                <td>  {{ post.text|truncatechars:20|censor }}</td>
                <td>  {{ post.date|date:'d M Y' }}
                </td>
+               <td>  {{ post.post_rate}}
+               </td>
+
                </h1>
 {% endblock content %}
