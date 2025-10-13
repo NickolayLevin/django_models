@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Новые статьи за неделю</h1>
+    <p>Здравствуй, {{ user.username }}! Вот новые публикации в твоих подписанных категориях за последнюю неделю.</p>
+    
+    {% if new_posts %}
+        <ul>
+            {% for post in new_posts %}
+                <li>
+                    <h3><a href="http://{{ site_domain }}/posts/{{ post.pk }}">{{ post.title }}</a></h3>
+                    <p>{{ post.text|truncatechars:50 }}...</p>
+                    <small>Категория: {{ post.categories.first.name }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Новых статей нет. Следи за обновлениями!</p>
+    {% endif %}
+    
+</body>
+</html>

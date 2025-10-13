@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import TextChoices
 from django.db.models import Sum
+from django.utils import timezone
+
 
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -14,12 +16,17 @@ class Author(models.Model):
         self.rating = sum_of_posts + sum_of_comments + sum_of_posts_comments
         self.save()
 
+    def update_last_newsletter(self):
+        self.last_newsletter_date = timezone.now()
+        self.save()
+    
     def __str__(self):
         return self.user.username
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
-
+    subscribers = models.ManyToManyField(User, blank= True, related_name='subscribed_categories')
+    last_newsletter_date = models.DateTimeField(null=True, blank=True)
     def __str__(self):
         return self.name
 

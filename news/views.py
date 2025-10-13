@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from django.core.mail import send_mail
+from .models import Post, Category
 from datetime import datetime
 from .filters import *
 from .forms import *
@@ -8,6 +9,18 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
+
+
+
+@login_required
+def subscribe_to_category(request, category_id):
+    category = get_object_or_404(Category, pk=category_id)
+    if category.subscribers.filter(pk=request.user.pk).exists():
+        category.subscribers.remove(request.user)  # Отписка
+    else:
+        category.subscribers.add(request.user)  # Подписка
+    return redirect('news_list_by_category', category_id=category_id)
+
 
 class NewsList(ListView):
  
@@ -69,6 +82,7 @@ class NewsCreateView(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
         form.save_m2m()
         return super().form_valid(form)
     
+    
 
 class ArticleCreateView(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
     model = Post
@@ -117,3 +131,20 @@ def upgrade_me(request):
     if not request.user.groups.filter(name='authors').exists():
         premium_group.user_set.add(user)
     return redirect('/posts')
+
+
+class CategoryNewsList(ListView):
+    model = Post
+    template_name = 'category_news.html'  
+    context_object_name = 'posts'
+    paginate_by = 10
+
+    def get_queryset(self):
+        self.category = get_object_or_404(Category, pk=self.kwargs['category_id'])
+        return Post.objects.filter(categories=self.category, post_type=Post.PostType.NEWS).order_by('-date')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = self.category
+        context['is_subscribed'] = self.category.subscribers.filter(pk=self.request.user.pk).exists() if self.request.user.is_authenticated else False
+        return context
