@@ -1,12 +1,36 @@
+from celery import shared_task
+import time
+from .models import *
+from datetime import timedelta
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
-from django.utils import timezone
-from datetime import timedelta
-from .models import Category, Post, User
 
-def send_weekly_newsletter():
+@shared_task
+def new_post_in_category_email(post_id):
+    instance = Post.objects.get(id=post_id)
+    added_categories = instance.categories.all()
+    for category in added_categories:
+            subscribers = category.subscribers.all()
+            for user in subscribers:
+                subject = instance.title
+                html_message = render_to_string('email_new_post.html', {
+                    'user': user,
+                    'post': instance,
+                    'preview_text': instance.text[:50] + '...' if len(instance.text) > 50 else instance.text,
+                })
+                plain_message = strip_tags(html_message)
+                send_mail(
+                    subject=subject,
+                    message=plain_message,
+                    from_email=None,
+                    recipient_list=[user.email],
+                    html_message=html_message,
+                )
+
+@shared_task
+def send_email_every_monday():
     one_week_ago = timezone.now() - timedelta(days=7)
     categories = Category.objects.all()
     
@@ -57,3 +81,4 @@ def send_weekly_newsletter():
                 html_message=html_message,
                 fail_silently=False,
             )
+

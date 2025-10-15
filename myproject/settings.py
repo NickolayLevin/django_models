@@ -185,4 +185,8 @@ APSCHEDULER_RUN_NOW_TIMEOUT = 25
 
 SITE_DOMAIN = '127.0.0.1:8000'
 
-
+CELERY_BROKER_URL = 'redis://default:qweasdzxc@redis-14921.crce175.eu-north-1-1.ec2.redns.redis-cloud.com:14921'
+CELERY_RESULT_BACKEND = 'redis://default:qweasdzxc@redis-14921.crce175.eu-north-1-1.ec2.redns.redis-cloud.com:14921'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'

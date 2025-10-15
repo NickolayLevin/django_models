@@ -10,28 +10,28 @@ from django.contrib.auth.models import User
 from allauth.account.signals import user_signed_up
 
 
-@receiver(m2m_changed, sender=Post.categories.through)
-def notify_subscribers_on_category_add(sender, instance, action, pk_set, **kwargs):
-    if action == 'post_add' and instance.post_type == Post.PostType.NEWS:
-        if timezone.now() - instance.date < timedelta(minutes=1):
-            added_categories = Category.objects.filter(pk__in=pk_set)
-            for category in added_categories:
-                subscribers = category.subscribers.all()
-                for user in subscribers:
-                    subject = instance.title
-                    html_message = render_to_string('email_new_post.html', {
-                        'user': user,
-                        'post': instance,
-                        'preview_text': instance.text[:50] + '...' if len(instance.text) > 50 else instance.text,
-                    })
-                    plain_message = strip_tags(html_message)
-                    send_mail(
-                        subject=subject,
-                        message=plain_message,
-                        from_email=None,
-                        recipient_list=[user.email],
-                        html_message=html_message,
-                    )
+# @receiver(m2m_changed, sender=Post.categories.through)
+# def notify_subscribers_on_category_add(sender, instance, action, pk_set, **kwargs):
+#     if action == 'post_add' and instance.post_type == Post.PostType.NEWS:
+#         if timezone.now() - instance.date < timedelta(minutes=1):
+#             added_categories = Category.objects.filter(pk__in=pk_set)
+#             for category in added_categories:
+#                 subscribers = category.subscribers.all()
+#                 for user in subscribers:
+#                     subject = instance.title
+#                     html_message = render_to_string('email_new_post.html', {
+#                         'user': user,
+#                         'post': instance,
+#                         'preview_text': instance.text[:50] + '...' if len(instance.text) > 50 else instance.text,
+#                     })
+#                     plain_message = strip_tags(html_message)
+#                     send_mail(
+#                         subject=subject,
+#                         message=plain_message,
+#                         from_email=None,
+#                         recipient_list=[user.email],
+#                         html_message=html_message,
+#                     )
 
 
 @receiver(user_signed_up)

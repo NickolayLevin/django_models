@@ -23,4 +23,5 @@ urlpatterns = [
     path('news/upgrade/', upgrade_me, name = 'upgrade'),
     path('category/<int:category_id>/', CategoryNewsList.as_view(), name='news_list_by_category'),
     path('category/<int:category_id>/subscribe/', subscribe_to_category, name='subscribe_to_category'),
+    path('index', IndexView.as_view()),
 ]

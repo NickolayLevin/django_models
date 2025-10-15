@@ -9,7 +9,11 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
-
+from .tasks import *
+from django.http import HttpResponse
+from django.views import View
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 
 @login_required
@@ -43,6 +47,7 @@ class NewsList(ListView):
         context['filterset'] = self.filterset
         context['is_not_author'] = not self.request.user.groups.filter(name = 'authors').exists()
         return context
+
 
 class PostDetail(DetailView):
     
@@ -80,7 +85,12 @@ class NewsCreateView(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
         post.post_type = Post.PostType.NEWS
         post.save()
         form.save_m2m()
+        new_post_in_category_email.delay(post_id = post.id)
         return super().form_valid(form)
+        
+
+
+    
     
     
 
@@ -148,3 +158,9 @@ class CategoryNewsList(ListView):
         context['category'] = self.category
         context['is_subscribed'] = self.category.subscribers.filter(pk=self.request.user.pk).exists() if self.request.user.is_authenticated else False
         return context
+    
+class IndexView(View):
+    def get(self, request):
+        printer.delay(10)
+        hello.delay()
+        return HttpResponse('Hello!')
