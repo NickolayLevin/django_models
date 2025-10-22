@@ -101,14 +101,7 @@ class NewsCreateView(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
         form.save_m2m()
         new_post_in_category_email.delay(post_id = post.id)
         return super().form_valid(form)
-    
-
-    def index(request):
-        logger.info("Пользователь открыл главную страницу")
-        return HttpResponse("Привет! Сервер работает.")
-
-
-    
+     
     
     
 
