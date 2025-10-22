@@ -1,0 +1,2 @@
+2025-10-22 18:08:01,440 [INFO] autoreload Watching for file changes with StatReloader
+2025-10-22 18:10:16,268 [INFO] autoreload C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.

@@ -14,6 +14,11 @@ from django.http import HttpResponse
 from django.views import View
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from django.core.cache import cache 
+import logging
+
+
+logger = logging.getLogger('general')
 
 
 @login_required
@@ -48,6 +53,7 @@ class NewsList(ListView):
         context['is_not_author'] = not self.request.user.groups.filter(name = 'authors').exists()
         return context
 
+    
 
 class PostDetail(DetailView):
     
@@ -56,6 +62,14 @@ class PostDetail(DetailView):
     template_name = 'post.html'
    
     context_object_name = 'post'
+    queryset = Post.objects.all()
+
+    def get_object(self, *args, **kwargs):
+        obj = cache.get(f'post-{self.kwargs["pk"]}', None)
+        if not obj:
+            obj = super().get_object(queryset=self.queryset)
+            cache.set(f'post-{self.kwargs["pk"]}', obj)
+        return obj
 
 class PostSearch(ListView):
     model = Post
@@ -87,7 +101,11 @@ class NewsCreateView(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
         form.save_m2m()
         new_post_in_category_email.delay(post_id = post.id)
         return super().form_valid(form)
-        
+    
+
+    def index(request):
+        logger.info("Пользователь открыл главную страницу")
+        return HttpResponse("Привет! Сервер работает.")
 
 
     

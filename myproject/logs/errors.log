@@ -1,0 +1,184 @@
+2025-10-22 20:14:03,682 [ERROR] <console>: Тестовая ошибка для логгера django.request
+None
+Traceback (most recent call last):
+  File "<console>", line 6, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:14:03,682 [ERROR] <console>: Тестовая ошибка для логгера django.server
+None
+Traceback (most recent call last):
+  File "<console>", line 6, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:14:03,684 [ERROR] <console>: Тестовая ошибка для логгера django.template
+None
+Traceback (most recent call last):
+  File "<console>", line 6, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:14:03,684 [ERROR] <console>: Тестовая ошибка для логгера django.db.backends
+None
+Traceback (most recent call last):
+  File "<console>", line 6, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:18:06,549 [ERROR] <console>: Тестовая ошибка для логгера django.request
+None
+Traceback (most recent call last):
+  File "<console>", line 6, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:18:06,550 [ERROR] <console>: Тестовая ошибка для логгера django.server
+None
+Traceback (most recent call last):
+  File "<console>", line 6, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:18:06,550 [ERROR] <console>: Тестовая ошибка для логгера django.template
+None
+Traceback (most recent call last):
+  File "<console>", line 6, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:18:06,550 [ERROR] <console>: Тестовая ошибка для логгера django.db.backends
+None
+Traceback (most recent call last):
+  File "<console>", line 6, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:23:57,174 [ERROR] <console>: Тестовая ошибка для django.request
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:23:57,174 [CRITICAL] <console>: Критическая ошибка для django.request
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:23:57,174 [ERROR] <console>: Тестовая ошибка для django.server
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:23:57,174 [CRITICAL] <console>: Критическая ошибка для django.server
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:23:57,174 [ERROR] <console>: Тестовая ошибка для django.template
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:23:57,174 [CRITICAL] <console>: Критическая ошибка для django.template
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:23:57,174 [ERROR] <console>: Тестовая ошибка для django.db.backends
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:23:57,175 [CRITICAL] <console>: Критическая ошибка для django.db.backends
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:02,268 [ERROR] <console>: Тестовое сообщение ERROR для django.request
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:02,924 [CRITICAL] <console>: Тестовое сообщение CRITICAL для django.request
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:03,405 [ERROR] <console>: Тестовое сообщение ERROR для django.server
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:03,905 [CRITICAL] <console>: Тестовое сообщение CRITICAL для django.server
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:04,484 [ERROR] <console>: Тестовое сообщение ERROR для django.template
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:04,484 [CRITICAL] <console>: Тестовое сообщение CRITICAL для django.template
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:04,484 [ERROR] <console>: Тестовое сообщение ERROR для django.db.backends
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:04,484 [CRITICAL] <console>: Тестовое сообщение CRITICAL для django.db.backends
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:04,490 [ERROR] <console>: Тестовое сообщение ERROR для mail django.request
+None
+2025-10-22 20:49:05,031 [CRITICAL] <console>: Тестовое сообщение CRITICAL для mail django.request
+None
+2025-10-22 20:49:05,576 [ERROR] <console>: Тестовое сообщение ERROR для mail django.server
+None
+2025-10-22 20:49:06,103 [CRITICAL] <console>: Тестовое сообщение CRITICAL для mail django.server
+None
+2025-10-22 20:49:56,203 [ERROR] <console>: Тестовое сообщение ERROR для django.request
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:56,203 [CRITICAL] <console>: Тестовое сообщение CRITICAL для django.request
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:56,203 [ERROR] <console>: Тестовое сообщение ERROR для django.server
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:56,203 [CRITICAL] <console>: Тестовое сообщение CRITICAL для django.server
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:56,204 [ERROR] <console>: Тестовое сообщение ERROR для django.template
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:56,204 [CRITICAL] <console>: Тестовое сообщение CRITICAL для django.template
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:56,204 [ERROR] <console>: Тестовое сообщение ERROR для django.db.backends
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:56,204 [CRITICAL] <console>: Тестовое сообщение CRITICAL для django.db.backends
+None
+Traceback (most recent call last):
+  File "<console>", line 4, in <module>
+ZeroDivisionError: division by zero
+2025-10-22 20:49:57,256 [ERROR] <console>: Тестовое сообщение ERROR для mail django.request
+None
+2025-10-22 20:49:57,256 [CRITICAL] <console>: Тестовое сообщение CRITICAL для mail django.request
+None
+2025-10-22 20:49:57,256 [ERROR] <console>: Тестовое сообщение ERROR для mail django.server
+None
+2025-10-22 20:49:57,256 [CRITICAL] <console>: Тестовое сообщение CRITICAL для mail django.server
+None
+2025-10-22 20:52:21,457 [ERROR] <console>: Тестовое письмо ERROR
+None
+2025-10-22 20:54:00,233 [ERROR] <console>: Тестовое письмо ERROR
+None
+2025-10-22 20:54:42,949 [ERROR] <console>: Тестовое письмо ERROR
+None
+2025-10-22 20:55:13,011 [ERROR] <console>: Тестовое письмо ERROR
+None

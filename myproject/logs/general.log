@@ -1,0 +1,37 @@
+2025-10-22 18:19:14,466 [INFO] autoreload Watching for file changes with StatReloader
+2025-10-22 18:20:33,146 [INFO] <console> Тест
+2025-10-22 18:20:41,487 [INFO] <console> Test
+2025-10-22 18:29:18,015 [INFO] autoreload C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.
+2025-10-22 18:29:22,403 [INFO] autoreload Watching for file changes with StatReloader
+2025-10-22 18:29:24,940 [INFO] autoreload C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.
+2025-10-22 18:29:25,603 [INFO] autoreload Watching for file changes with StatReloader
+2025-10-22 18:29:27,095 [INFO] autoreload C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.
+2025-10-22 20:23:57,019 [INFO] <console>: INFO сообщение для general.log
+2025-10-22 20:23:57,034 [WARNING] <console>: WARNING сообщение для general.log
+2025-10-22 20:48:29,068 [INFO] autoreload: Watching for file changes with StatReloader
+2025-10-22 20:48:30,593 [INFO] autoreload: C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.
+2025-10-22 20:48:31,292 [INFO] autoreload: Watching for file changes with StatReloader
+2025-10-22 20:48:32,809 [INFO] autoreload: C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.
+2025-10-22 20:48:33,555 [INFO] autoreload: Watching for file changes with StatReloader
+2025-10-22 20:48:41,320 [INFO] autoreload: C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.
+2025-10-22 20:48:42,045 [INFO] autoreload: Watching for file changes with StatReloader
+2025-10-22 20:49:02,048 [INFO] <console>: Тестовое сообщение INFO для django
+2025-10-22 20:49:02,064 [WARNING] <console>: Тестовое сообщение WARNING для django
+2025-10-22 20:49:02,079 [ERROR] <console>: Тестовое сообщение ERROR для django
+NoneType: None
+2025-10-22 20:49:02,111 [CRITICAL] <console>: Тестовое сообщение CRITICAL для django
+NoneType: None
+2025-10-22 20:49:46,821 [INFO] autoreload: C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.
+2025-10-22 20:49:47,555 [INFO] autoreload: Watching for file changes with StatReloader
+2025-10-22 20:49:55,984 [INFO] <console>: Тестовое сообщение INFO для django
+2025-10-22 20:49:56,000 [WARNING] <console>: Тестовое сообщение WARNING для django
+2025-10-22 20:49:56,015 [ERROR] <console>: Тестовое сообщение ERROR для django
+NoneType: None
+2025-10-22 20:49:56,047 [CRITICAL] <console>: Тестовое сообщение CRITICAL для django
+NoneType: None
+2025-10-22 20:51:41,959 [INFO] autoreload: C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.
+2025-10-22 20:53:47,914 [INFO] autoreload: Watching for file changes with StatReloader
+2025-10-22 20:54:24,516 [INFO] autoreload: C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.
+2025-10-22 20:54:25,209 [INFO] autoreload: Watching for file changes with StatReloader
+2025-10-22 20:55:04,968 [INFO] autoreload: C:\Python\study\django_project\myproject\myproject\settings.py changed, reloading.
+2025-10-22 20:55:05,679 [INFO] autoreload: Watching for file changes with StatReloader
